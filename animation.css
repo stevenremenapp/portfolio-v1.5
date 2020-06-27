@@ -1,0 +1,81 @@
+@keyframes firstName {
+  0% {
+    /* position: absolute; */
+    left: 1200px;
+  }
+  /* 85% {
+    left: 800px;
+  } */
+  99.9% {
+    /* position: absolute; */
+    /* Getting rid of left and right here makes it super glitchy */
+    /* left: calc(100% - 220px); */
+  }
+  100% {
+    /* position: relative; */
+    /* left: calc(50% - 220px); */
+    /* margin-left: 110px; */
+    left: calc(50% - 242px);
+  }
+}
+
+@keyframes lastName {
+  0% {
+    /* position: absolute; */
+    right: 500px;
+    opacity: 0;
+  }
+  85% {
+    right: 200px;
+    opacity: 0;
+  }
+  /* 95% {
+    opacity: 1;
+  } */
+  99.9% {
+    /* position: absolute; */
+    /* right: calc(50% - 306px); */
+  }
+  100% {
+    /* position: relative; */
+    opacity: 1;
+    /* right: calc(50% - 306px);
+    margin-right: 153px; */
+    right: calc(50% - 242px);
+  }
+}
+
+@keyframes subtitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  @keyframes firstName {
+    0% {
+      left: 1200px;
+    }
+    100% {
+      left: calc(50% - 107px);
+    }
+  }
+  
+  @keyframes lastName {
+    0% {
+      right: 500px;
+      opacity: 0;
+    }
+    85% {
+      right: 200px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      right: calc(50% - 147px);
+    }
+  }
+}

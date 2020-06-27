@@ -1,0 +1,8 @@
+h1, p {
+  text-align: center;
+}
+
+canvas {
+  opacity: 0.2;
+  /* z-index: 0; */
+}
