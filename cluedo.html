@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cluedo.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="script.js"></script>
+    <title>🐣🐥🐔</title>
+  </head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="cluedo.html">Cluedo</a>
+  </nav>
+  <div class="content">
+    <h1>AN UNAUTHORIZED REWORKING OF CLUE</h1>
+    <h2>ABOUT</h2>
+    <p>This game was created years ago with a couple of close friends as an attempt to insert political economy into Clue. Try it out and let me know how it goes!</p>
+    <h2>ACKNOWLEDGEMENTS</h2>
+    <p>Thanks to Anothy E. Pratt, musician, letter, soliciter's clerk, aspiring chemist, aspiring composer, driller, and inventor of the first murder mystery board game, Cluedo.</p>   
+    <h2>DEFINITIONS</h2>
+    <p>Player/potential <a href="https://youtu.be/5gcjEmHYv_U" target="_blank" rel="noopener noreferrer" style="text-decoration: underline magenta;"><span class="magenta">MURRDDEEEEERER</span></a> - You. The current turn-taker.</p>
+    <p>Dice - plural of die, not a close race between two racecars.</p>
+    <p>Cluedos - Represented by the symbol, Ç, this is the currency in the game.</p>
+    <h2>RULES</h2>
+    <p>Each player/potential <span class="magenta">MURRDEREEERR</span> rolls 2 dice at the beginning of their turn. The number showing is how many Ç the player/potential <span class="magenta">MURRDEREEERR</span> has on-hand for use during their turn.</p>
+    <p>One player is designated the banker. They manage the Cluedo accounts of all players at the Cluedo National Bank (CNB) and transactions at the Open-Air Market (OAM). For performing this generous service, they start the game.</p>
+    <ul>
+      <h3>MOVEMENT</h3>
+      <li>It costs 1 Ç to move one space on the board. Also, it costs 1 Ç to move through a room -- that is, a room can act as a single space. It costs 3 Ç to use a secret passage.</li>
+      <h3>GUESSING</h3>
+      <li>It costs 3 Ç to guess the perptrator, weapon, and room. This guess must be made from that same room.</li>
+      <h3>BANKING</h3>
+      <li>At the end of a turn, the player/potential <span class="magenta">MURRDEREEERR</span> may have leftover Cluedos (Ç). They can deposit these leftover Cluedos in the Cluedo National Bank. Banking is only allowed at the end of a turn, in a room.</li>
+      <h3>ACTIONS AND RENEWAL</h3>
+      <li>1 guess and 1 CNB deposit are allowed each time a player/potential <span class="magenta">MURDDEEERRER</span> enters a new room. Thus, once these actions are used in a room, the player/potential <span class="magenta">MUUURRRDEEEERER</span> must enter a new room before they are able to perform these actions again.</li>
+      <h3>FINAL ACCUSATION</h3>
+      <li>This is the only action in the game that costs 0 Ç, however, the player/potential <span class="magenta">MURDERRRER</span> is removed from the game if incorrect.</li>
+    </ul>
+    <h2>ABILITIES</h2>
+    <p>Abilities can be purchased at the Open-Air Market (OAM), located in the center of the board (known to original Clue game as the "cellar" and a subsequent, less successful version as the "pool").</p>
+    <p>It costs 1 Ç to enter the Open-Air Market since there are no 'doors' per se. It also costs 1 Ç to exit the Open-Air Market.  The player/potential <span class="magenta">MUURUDDDEEEERERERR</span> must exit on the same side of the rectangle that they entered.</p>
+    <p>The Open-Air Market doesn't count as a room, that is, entering doesn't renew banking and guessing actions for the player/potential <span class="magenta">MUURUDDDEEEERERERR</span>. No banking or guessing is allowed here.</p>
+    <h2>Inventory of Abilities in the Open-Air Market</h2>
+    <p>All abilities can be used at any time during a player's turn, including immediately upon purchase. Inventory is infinite. Following are recommended abilities and pricing, and are subject to change based on sociocultural context of the game at hand. This pricing is based on a three-person game. The writers suspect that adding more players to the game should increase the cost of abilities since they become more potent. Use reasonable judgement.</p>
+    <ul>
+      <h3>Look Random - Ç 3</h3>
+      <li>See one card, at random, from an opponent's hand. Selected opponent displays their cards facedown on the table from which the player/possible <span class="magenta">MURDERER</span> selects for private viewing.</li>
+      <h3>Free Guess - Ç 5</h3>
+      <li>Player/possible <span class="magenta">MURDERERRRR</span> gains the ability to make a guess without paying the Ç3. Following general rules, you must be in the room that your are guessing.</li>
+      <h3>Wire Tap - Ç 7</h3>
+      <li>Player/possible <span class="magenta">MURDEERRREERRR</span> gains the ability to monitor all private communications to AND from a specified opponent.</li>
+      <h3>Bag-O-Death - Ç 10</h3>
+      <li>Player/possible <span class="magenta">MUUURDEREERRR</span> rolls 1 die, the number of which determines their ability. These are cumulative. For example, 2 different players may use the lead piping ability (see below) in single game and both would be in effect.</li>
+      <ol>
+        <li><span style="text-decoration: underline;">The lead piping</span>: Subtracts 1 Ç from each opponent's roll for the remainder of the game. The lead piping incapacitates.</li>
+        <li><span style="text-decoration: underline;">The dagger</span>: Each opponent loses their next turn. The dagger stabs.</li>
+        <li><span style="text-decoration: underline;">The candlestick</span>: Each opponent displays their cards facedown on the table and the player/potential <span class="magenta">MURRDEREEERR</span> selects one card at random from each opponent to publicly reveal. These cards are placed face-up somehwere on the table for the remainder of the game. The candlestick illuminates.</li>
+        <li><span style="text-decoration: underline;">The spanner</span>: The player/potential <span class="magenta">MURRDEREEERR</span> is the only player that can use the secret passages for the remainder of the game. This also applies to any Transporters (see below). The spanner wrenches locks.</li>
+        <li><span style="text-decoration: underline;">The rope</span>: The player/potential <span class="magenta">MURRDEREEERR</span> moves each opponent to any location on the board. The rope lassos.</li>
+        <li><span style="text-decoration: underline;">The revolver</span>: The player/potential <span class="magenta">MURRDEREEERR</span> challenges each opponent to a game of Russian Roulette. The player/potential <span class="magenta">MURRDEREEERR</span> chooses a single bet for their entire round of challenges. This bet can involve any aspect of the game mechanics. Use (un?)reasonable judgement. The only written rule is that, when the stakes are set, the player/potential <span class="magenta">MURRDEREEERR</span> must have the resources to support their side of the bet. For example, if the player/potential <span class="magenta">MURRDEREEERR</span> challanges for Cluedos, they must have at least that amount banked or on-hand. In this case, should an opponent or the player/potential <span class="magenta">MURRDEREEERR</span> go into debt from losing a challenge, that debt must be repaid to the challanged opponent before they can make a final accusation. The revolver <span class="magenta">MAUUUUUURRRRRDDEEEEEHHRRSSS.</span></li>
+      </ol>
+      <h3>The Transporter - Ç 15</h3>
+      <li>The player/potential <span class="magenta">MURRDEREEERR</span> gains the ability to transport from room to room at the cost of 1 Ç. Notes: Open-air market does not count as a 'room' and the spanner ability shuts down the ability to transport via secret passages. Normal room renewal rules apply.</li>
+      <h3>Look Solution - Ç 15</h3>
+      <li>The player/potential <span class="magenta">MURRDEREEERR</span> gains the abiliy to look, at random, at one of the solution cards. If the player/potential <span class="magenta">MURRDEREEERR</span> plays multiple Look Solution abilties at once, the cards are shuffled between looks.</li>
+    </ul>
+  </div>
+</body>
+</html>
