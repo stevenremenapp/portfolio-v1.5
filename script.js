@@ -1,18 +1,21 @@
-let saveButton, clearButton, buttonIsClicked, canvasIsClicked;
+let saveButton, clearButton, buttonIsClicked, canvasIsClicked, previousBackgroundColor, currentBackgroundColor;
 let currentEmojiCode = "1F63B";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background('white');
+  previousBackgroundColor = color(255, 255, 255);
+  currentBackgroundColor = color(255, 255, 255);
+  amt = 0;
+  background(currentBackgroundColor);
   // Creating the save button for the file
-  saveButton = createButton(String.fromCodePoint(0x1F4BE));
+  saveButton = createButton(String.fromCodePoint(0x1f4be));
   saveButton.position(10, 10, "fixed");
   saveButton.mousePressed(saveFile);
   saveButton.class("btn");
   saveButton.attribute("title", "Save");
   saveButton.attribute("aria-label", "Save");
   // Creating the clear button
-  clearButton = createButton(String.fromCodePoint(0x1F5D1));
+  clearButton = createButton(String.fromCodePoint(0x1f5d1));
   clearButton.position(75, 10, "fixed");
   clearButton.mousePressed(clearScreen);
   clearButton.class("btn");
@@ -24,25 +27,28 @@ function setup() {
   emojiSelect.class("btn");
   emojiSelect.attribute("title", "Change Emoji");
   emojiSelect.attribute("aria-label", "Change Emoji");
-  emojiSelect.option(String.fromCodePoint(0x1F63B));
-  emojiSelect.option(String.fromCodePoint(0x1F308));
-  emojiSelect.option(String.fromCodePoint(0x1F4A9));
-  emojiSelect.option(String.fromCodePoint(0x1F493));  
-  emojiSelect.option(String.fromCodePoint(0x1F984));
-  emojiSelect.option(String.fromCodePoint(0x1F61C));
-  emojiSelect.option(String.fromCodePoint(0x1F973));
-  emojiSelect.option(String.fromCodePoint(0x1F92F));
-  emojiSelect.option(String.fromCodePoint(0x1F920));
-  emojiSelect.option(String.fromCodePoint(0x1F976));
-  emojiSelect.option(String.fromCodePoint(0x1F576));
-  emojiSelect.option(String.fromCodePoint(0x1F441));
-  emojiSelect.option(String.fromCodePoint(0x1F412));
+  emojiSelect.option(String.fromCodePoint(0x1f63b));
+  emojiSelect.option(String.fromCodePoint(0x1f308));
+  emojiSelect.option(String.fromCodePoint(0x1f4a9));
+  emojiSelect.option(String.fromCodePoint(0x1f493));
+  emojiSelect.option(String.fromCodePoint(0x1f984));
+  emojiSelect.option(String.fromCodePoint(0x1f61c));
+  emojiSelect.option(String.fromCodePoint(0x1f973));
+  emojiSelect.option(String.fromCodePoint(0x1f92f));
+  emojiSelect.option(String.fromCodePoint(0x1f920));
+  emojiSelect.option(String.fromCodePoint(0x1f976));
+  emojiSelect.option(String.fromCodePoint(0x1f576));
+  emojiSelect.option(String.fromCodePoint(0x1f441));
+  emojiSelect.option(String.fromCodePoint(0x1f412));
   emojiSelect.changed(emojiSelectEvent);
+  startColor = color(255,255,255);
+  newColor = color(0,255,255);
+  amt = 0;
 }
 
 function emojiSelectEvent() {
   let emojis = {
-    "🌈" : "1F308",
+    "🌈": "1F308",
     "😻": "1F63B",
     "💩": "1F4A9",
     "💓": "1F493",
@@ -55,7 +61,7 @@ function emojiSelectEvent() {
     "🕶": "1F576",
     "👁": "1F441",
     "🐒": "1F412"
-  }
+  };
   let emoji = emojiSelect.value();
   currentEmojiCode = emojis[emoji];
   // console.log(emoji);
@@ -74,6 +80,20 @@ function mousePressed(event) {
   } else {
     // console.log(false);
     canvasIsClicked = false;
+  }
+  if (!event.target.dataset.r) {
+    return;
+  } else {
+    // console.log(setBackgroundColor(event.target.dataset.color));
+    previousBackgroundColor = currentBackgroundColor;
+    // currentBackgroundColor = event.target.dataset.color;
+    currentBackgroundColor = color(
+      event.target.dataset.r,
+      event.target.dataset.g,
+      event.target.dataset.b
+    );
+    // console.log(previousBackgroundColor, currentBackgroundColor);
+    background(lerpColor(previousBackgroundColor, currentBackgroundColor, 0.5));
   }
 }
 
@@ -103,9 +123,12 @@ function drawEmoji(x, y, px, py) {
 }
 
 function saveFile() {
-  save('wut.jpg');
+  save("wut.jpg");
 }
 
 function clearScreen() {
-  background('white');
+  previousBackgroundColor = currentBackgroundColor;
+  currentBackgroundColor = color(255, 255, 255);
+  amt = 0;
+  background(currentBackgroundColor);
 }
