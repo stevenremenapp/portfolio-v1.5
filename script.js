@@ -1,11 +1,15 @@
-let saveButton, clearButton, buttonIsClicked, canvasIsClicked, previousBackgroundColor, currentBackgroundColor;
+let saveButton,
+  clearButton,
+  buttonIsClicked,
+  canvasIsClicked,
+  previousBackgroundColor,
+  currentBackgroundColor;
 let currentEmojiCode = "1F63B";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   previousBackgroundColor = color(255, 255, 255);
   currentBackgroundColor = color(255, 255, 255);
-  amt = 0;
   background(currentBackgroundColor);
   // Creating the save button for the file
   saveButton = createButton(String.fromCodePoint(0x1f4be));
@@ -15,7 +19,7 @@ function setup() {
   saveButton.attribute("title", "Save");
   saveButton.attribute("aria-label", "Save");
   // Creating the clear button
-  clearButton = createButton(String.fromCodePoint(0x1f5d1));
+  clearButton = createButton("🗑️");
   clearButton.position(75, 10, "fixed");
   clearButton.mousePressed(clearScreen);
   clearButton.class("btn");
@@ -41,8 +45,8 @@ function setup() {
   emojiSelect.option(String.fromCodePoint(0x1f441));
   emojiSelect.option(String.fromCodePoint(0x1f412));
   emojiSelect.changed(emojiSelectEvent);
-  startColor = color(255,255,255);
-  newColor = color(0,255,255);
+  startColor = color(255, 255, 255);
+  newColor = color(0, 255, 255);
   amt = 0;
 }
 
@@ -97,6 +101,31 @@ function mousePressed(event) {
   }
 }
 
+function keyPressed(event) {
+  console.log(event.target.title);
+  if (keyCode !== ENTER) {
+    return;
+  }
+  if (event.target.dataset.r) {
+    // console.log(setBackgroundColor(event.target.dataset.color));
+    previousBackgroundColor = currentBackgroundColor;
+    // currentBackgroundColor = event.target.dataset.color;
+    currentBackgroundColor = color(
+      event.target.dataset.r,
+      event.target.dataset.g,
+      event.target.dataset.b
+    );
+    // console.log(previousBackgroundColor, currentBackgroundColor);
+    background(lerpColor(previousBackgroundColor, currentBackgroundColor, 0.5));
+  }
+  if (event.target.title === "Clear") {
+    clearScreen();
+  }
+  if (event.target.title === "Save") {
+    saveFile();
+  }
+}
+
 function draw() {
   // Call the drawEmoji() method and send it the
   // parameters for the current mouse position
@@ -129,6 +158,5 @@ function saveFile() {
 function clearScreen() {
   previousBackgroundColor = currentBackgroundColor;
   currentBackgroundColor = color(255, 255, 255);
-  amt = 0;
   background(currentBackgroundColor);
 }
