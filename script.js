@@ -102,7 +102,7 @@ function mousePressed(event) {
 }
 
 function keyPressed(event) {
-  console.log(event.target.title);
+  // console.log(event.target.title);
   if (keyCode !== ENTER) {
     return;
   }

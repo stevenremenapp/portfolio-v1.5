@@ -274,6 +274,14 @@ select.btn {
     opacity: 1;
   }
 }
+@media screen and (max-width: 992px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .content-grid .headings {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .large-screen .popup.orange {
     top: 28%;
