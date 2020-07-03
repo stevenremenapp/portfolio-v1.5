@@ -1,24 +1,25 @@
 @font-face {
-  font-family: 'DDCHardware';
-  src: url('./fonts/ddchardware-regular-webfont.woff2') format('woff2'),
-       url('./fonts/ddchardware-regular-webfont.woff') format('woff'),
-       url('./fonts/ddchardware-regular-webfont.ttf') format('truetype');
-       font-weight: normal;
-       font-style: normal;
+  font-family: "DDCHardware";
+  src: url("./fonts/ddchardware-regular-webfont.woff2") format("woff2"),
+    url("./fonts/ddchardware-regular-webfont.woff") format("woff"),
+    url("./fonts/ddchardware-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 html {
   scroll-behavior: smooth;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   color: #252525;
 }
-nav {
+nav.homepage {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -27,17 +28,20 @@ nav {
   padding: 5px 10px;
   z-index: 10;
 }
-nav a {
+nav.homepage a {
   display: block;
 }
-h1, h2, h3 {
-  font-family: 'DDCHardware', 'Bungee', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "DDCHardware", "Bungee", sans-serif;
 }
 h1 {
   font-size: 56px;
   line-height: 56px;
 }
-h2, h3 {
+h2,
+h3 {
   text-decoration: underline;
   font-weight: normal;
 }
@@ -69,6 +73,16 @@ a.anchor {
   border-bottom: 3px solid #252525;
   width: 100%;
   background: white;
+}
+.top-bar .menu-container {
+  position: fixed;
+  top: 0;
+  right: 5px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid #252525;
 }
 .content-wrapper {
   max-width: 1440px;
@@ -195,7 +209,7 @@ a.anchor {
   left: calc(50% - 58px);
 }
 .name {
-  font-family: 'DDCHardware', 'Bungee', sans-serif;
+  font-family: "DDCHardware", "Bungee", sans-serif;
   font-size: 52px;
   user-select: none;
   opacity: 0;
@@ -203,10 +217,11 @@ a.anchor {
 }
 .name h1 {
   margin-bottom: 0;
-  text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
+  text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
+    -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
 }
 .subtitle-text {
-  font-family: 'DDCHardware', 'Bungee', sans-serif;
+  font-family: "DDCHardware", "Bungee", sans-serif;
   user-select: none;
   opacity: 0;
   text-align: center;
@@ -215,7 +230,8 @@ a.anchor {
 }
 .subtitle-text p {
   margin: 5px 0;
-  text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
+  text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
+    -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
 }
 .cyan {
   color: cyan;
@@ -239,8 +255,8 @@ canvas {
   position: fixed;
   top: 0;
   z-index: -1;
-  width:100%;
-  height:100vh;
+  width: 100%;
+  height: 100vh;
   opacity: 0.8;
   margin-left: 0;
   transition: 0.3s;
@@ -256,14 +272,108 @@ select.btn {
   padding: 4px 10px;
   min-height: 44px;
 }
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   cursor: pointer;
-  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 ::selection {
   background-color: rgba(83, 147, 254, 0.5);
   color: black;
+}
+
+/*
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin-left: 5px;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+.hamburger--3dxy .hamburger-box {
+  perspective: 80px;
+}
+
+.hamburger--3dxy .hamburger-inner {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.hamburger--3dxy .hamburger-inner::before,
+.hamburger--3dxy .hamburger-inner::after {
+  transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dxy.is-active .hamburger-inner {
+  background-color: transparent !important;
+  transform: rotateX(180deg) rotateY(180deg);
+}
+.hamburger--3dxy.is-active .hamburger-inner::before {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+.hamburger--3dxy.is-active .hamburger-inner::after {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
 
 @keyframes subtitle {
@@ -298,7 +408,8 @@ select.btn {
   .subtitle-text {
     font-size: 14px;
   }
-  .name, .subtitle-text {
+  .name,
+  .subtitle-text {
     padding: 0 15px;
   }
   h1 {
@@ -307,6 +418,9 @@ select.btn {
   }
   .name h1 {
     text-align: center;
+  }
+  .hamburger {
+    padding: 10px;
   }
 }
 @media screen and (min-width: 576px) {

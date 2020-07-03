@@ -1,7 +1,7 @@
-// Scrollspy
 document.addEventListener(
   "DOMContentLoaded",
   () => {
+    // Scrollspy
     const sections = document.querySelectorAll(".anchor");
     const tocLinks = document.querySelectorAll(".toc a");
     const makeActive = link => tocLinks[link].classList.add("active");
@@ -20,7 +20,8 @@ document.addEventListener(
           .reverse()
           .findIndex(
             section => window.scrollY >= section.offsetTop - sectionMargin
-          ) - 1;
+          ) -
+        1;
       if (current >= sections.length) {
         current = 0;
       }
@@ -29,6 +30,11 @@ document.addEventListener(
         currentActive = current;
         makeActive(current);
       }
+    });
+    // Handle menu
+    const menu = document.getElementById("menu");
+    menu.addEventListener("click", () => {
+      menu.classList.toggle("is-active");
     });
   },
   false

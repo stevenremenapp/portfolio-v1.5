@@ -77,7 +77,7 @@ function windowResized() {
 }
 
 function mousePressed(event) {
-  // console.log(event.target.tagName);
+  // console.log(event);
   if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SELECT") {
     // console.log(true);
     canvasIsClicked = true;
