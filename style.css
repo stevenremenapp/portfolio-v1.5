@@ -13,11 +13,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   color: #252525;
+  overflow: visible;
 }
 nav.homepage {
   position: fixed;
@@ -83,6 +85,73 @@ a.anchor {
   justify-content: center;
   align-items: center;
   border-left: 3px solid #252525;
+}
+.open-menu {
+  position: fixed;
+  top: 0;
+  left: -3px;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  border-left: 3px solid #252525;
+  border-bottom: 3px solid #252525;
+  z-index: 5;
+  transform: translate3d(100%,-100%,0);
+  transition: 0.25s ease-in-out all;
+}
+.open-menu .hamburger {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+.open-menu.open {
+  transform: translateZ(0);
+}
+.open-menu .open-menu-wrapper {
+  height: 100%;
+  width: 100%;
+}
+.open-menu-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.open-menu-grid .link-container {
+  padding: 10rem 12rem;
+}
+.open-menu-grid .link-container .links {
+  height: 100%;
+  border: 3px solid #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.open-menu .link-container .links a {
+  font-family: "DDCHardware", "Bungee", sans-serif;
+  font-size: 52px;
+  line-height: 52px;
+  padding: 1rem;
+  border-bottom: 3px solid #252525;
+  text-decoration: none;
+  flex: 1;
+}
+.open-menu .link-container .links a:last-of-type {
+  border-bottom: none;
+}
+.open-menu .link-container .links a:hover,
+.open-menu .link-container .links a:focus {
+  color: #252525 !important;
+  background: rgba(83, 147, 254, 0.5);
+}
+.open-menu-grid .image-container {
+  padding: 10rem 8rem;
+}
+.open-menu-grid .image-container .image {
+  height: 100%;
+  border: 3px solid #252525;
+  animation: colors 10s infinite;
 }
 .content-wrapper {
   max-width: 1440px;
@@ -283,40 +352,20 @@ select.btn {
   background-color: rgba(83, 147, 254, 0.5);
   color: black;
 }
-
-/*
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
 .hamburger {
   padding: 15px 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
   font: inherit;
   color: inherit;
   text-transform: none;
   background-color: transparent;
   border: 0;
   margin-left: 5px;
-  overflow: visible;
 }
 .hamburger:hover {
   opacity: 0.7;
-}
-.hamburger.is-active:hover {
-  opacity: 0.7;
-}
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
 }
 .hamburger-box {
   width: 40px;
@@ -336,9 +385,6 @@ select.btn {
   height: 4px;
   background-color: #000;
   position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
 }
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -351,27 +397,14 @@ select.btn {
 .hamburger-inner::after {
   bottom: -10px;
 }
-.hamburger--3dxy .hamburger-box {
-  perspective: 80px;
-}
-
-.hamburger--3dxy .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
-    background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.hamburger--3dxy .hamburger-inner::before,
-.hamburger--3dxy .hamburger-inner::after {
-  transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger--3dxy.is-active .hamburger-inner {
+.hamburger--close .hamburger-inner {
   background-color: transparent !important;
   transform: rotateX(180deg) rotateY(180deg);
 }
-.hamburger--3dxy.is-active .hamburger-inner::before {
+.hamburger--close .hamburger-inner::before {
   transform: translate3d(0, 10px, 0) rotate(45deg);
 }
-.hamburger--3dxy.is-active .hamburger-inner::after {
+.hamburger--close .hamburger-inner::after {
   transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
 
@@ -381,6 +414,32 @@ select.btn {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes colors {
+  0%, 100% {
+    color: rgb(128, 0, 128);
+    background: rgb(128, 0, 128);
+  }
+  16% {
+      color: magenta;
+      background: magenta;
+  }
+  32% {
+      color: orange;
+      background: orange;
+  }
+  48% {
+      color: yellow;
+      background: yellow;
+  }
+  64% {
+      color: green;
+      background: green;
+  }
+  80% {
+      color: cyan;
+      background: cyan;
   }
 }
 @media screen and (max-width: 992px) {

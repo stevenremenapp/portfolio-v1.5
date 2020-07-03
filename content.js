@@ -31,11 +31,6 @@ document.addEventListener(
         makeActive(current);
       }
     });
-    // Handle menu
-    const menu = document.getElementById("menu");
-    menu.addEventListener("click", () => {
-      menu.classList.toggle("is-active");
-    });
   },
   false
 );
