@@ -168,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeMenuBtn = document.getElementById("close-menu-btn");
   const body = document.getElementsByTagName("body")[0];
   menu.addEventListener("click", () => {
-    console.log(document.activeElement);
     body.style.overflow = "hidden";
     openMenu.classList.add("open");
     closeMenuBtn.focus();
