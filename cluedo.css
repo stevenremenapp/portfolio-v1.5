@@ -6,3 +6,9 @@ canvas {
   opacity: 0.15;
   /* z-index: 0; */
 }
+
+@media screen and (max-width: 576px) {
+  .murder {
+    word-break: break-all;
+  }
+}
