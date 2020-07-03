@@ -6,7 +6,9 @@
        font-weight: normal;
        font-style: normal;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -54,6 +56,12 @@ a:visited,
 a:active {
   color: #252525;
 }
+a.anchor {
+  display: block;
+  position: relative;
+  top: -140px;
+  visibility: hidden;
+}
 .top-bar {
   position: fixed;
   top: 0;
@@ -62,21 +70,58 @@ a:active {
   width: 100%;
   background: white;
 }
-.content {
-  max-width: 800px;
+.content-wrapper {
+  max-width: 1440px;
   margin: 150px auto 100px auto;
+  padding: 0 30px;
 }
-.content .label {
+.content-wrapper .label {
   font-size: 13px;
   text-align: center;
   color: #5393fe;
   font-weight: bold;
 }
-.content .title {
-  margin: 4rem 0;
+.content-wrapper .title {
+  max-width: 1200px;
+  margin: 4rem auto 5rem auto;
 }
-.content .divider {
+.content-wrapper .divider {
   margin: 0 5px;
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 14em;
+  column-gap: 12em;
+}
+.content-grid .content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.content-grid .content h2:first-of-type {
+  margin-top: 0;
+}
+.content-grid .headings .toc {
+  position: sticky;
+  top: 150px;
+  border: 3px solid #252525;
+}
+.content-grid .headings .toc a {
+  display: block;
+  padding: 12px 18px;
+  border-bottom: 3px solid #252525;
+  text-decoration: none;
+}
+.content-grid .headings .toc a.active,
+.content-grid .headings .toc a:hover,
+.content-grid .headings .toc a:focus {
+  color: #252525 !important;
+  background: rgba(83, 147, 254, 0.5);
+}
+.content-grid .headings .toc a:first-of-type {
+  margin-top: 0;
+}
+.content-grid .headings .toc a:last-of-type {
+  border-bottom: none;
 }
 .container {
   height: 100vh;
@@ -229,12 +274,6 @@ select.btn {
     opacity: 1;
   }
 }
-
-@media screen and (max-width: 992px) {
-  .content {
-    padding: 0 30px;
-  }
-}
 @media screen and (max-width: 768px) {
   .large-screen .popup.orange {
     top: 28%;
@@ -242,7 +281,7 @@ select.btn {
   }
 }
 @media screen and (max-width: 576px) {
-  .content {
+  .content-wrapper {
     padding: 0 15px;
   }
   .large-screen {
@@ -254,10 +293,12 @@ select.btn {
   .name, .subtitle-text {
     padding: 0 15px;
   }
-  .name h1 {
-    text-align: center;
+  h1 {
     font-size: 36px;
     line-height: 36px;
+  }
+  .name h1 {
+    text-align: center;
   }
 }
 @media screen and (min-width: 576px) {
