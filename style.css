@@ -21,7 +21,7 @@ body {
   color: #252525;
   overflow: visible;
 }
-nav.homepage {
+.homepage-nav {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -30,7 +30,7 @@ nav.homepage {
   padding: 5px 10px;
   z-index: 10;
 }
-nav.homepage a {
+.homepage-nav a {
   display: block;
 }
 h1,
@@ -86,6 +86,9 @@ a.anchor {
   align-items: center;
   border-left: 3px solid #252525;
 }
+.home-top-bar {
+  z-index: 2;
+}
 .open-menu {
   position: fixed;
   top: 0;
@@ -127,6 +130,9 @@ a.anchor {
   padding: 10rem 12rem;
 }
 .open-menu-grid .link-container .links {
+  height: 100%;
+}
+.open-menu-grid .link-container .links nav {
   height: 100%;
   max-width: 600px;
   border: 3px solid #252525;
@@ -344,6 +350,7 @@ canvas {
   border: 3px solid #252525;
   padding: 5px 10px;
   font-size: 24px;
+  z-index: 2;
 }
 select.btn {
   padding: 4px 10px;
@@ -522,12 +529,18 @@ select.btn {
   .open-menu-grid .image-container {
     display: none;
   }
+  .homepage-nav {
+    display: none;
+  }
 }
 @media screen and (min-width: 576px) {
   .small-screen {
     display: none;
   }
   .image-mobile {
+    display: none;
+  }
+  .home-top-bar {
     display: none;
   }
 }
