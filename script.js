@@ -170,10 +170,16 @@ document.addEventListener("DOMContentLoaded", () => {
   menu.addEventListener("click", () => {
     body.style.overflow = "hidden";
     openMenu.classList.add("open");
-    closeMenuBtn.focus();
+    openMenu.setAttribute("aria-hidden", false);
+    openMenu.setAttribute("tabindex", 1);
+    setTimeout(() => {
+      closeMenuBtn.focus();
+    }, 100);
   });
   closeMenuBtn.addEventListener("click", () => {
     openMenu.classList.remove("open");
+    openMenu.setAttribute("aria-hidden", true);
+    openMenu.setAttribute("tabindex", -1);
     body.style.overflow = "visible";
     menu.focus();
   });
