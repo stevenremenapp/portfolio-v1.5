@@ -240,6 +240,9 @@ a.anchor {
   opacity: 1;
   cursor: pointer;
 }
+.small-screen {
+  margin-top: 4rem;
+}
 .small-screen .popup {
   font-size: 24px;
 }
@@ -299,7 +302,8 @@ a.anchor {
   animation: 1s ease-in forwards subtitle;
 }
 .name h1 {
-  margin-bottom: 0;
+  text-align: center;
+  margin: 0 0 1rem 0;
   text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
     -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
 }
@@ -511,11 +515,8 @@ select.btn {
     padding: 0 15px;
   }
   h1 {
-    font-size: 36px;
-    line-height: 36px;
-  }
-  .name h1 {
-    text-align: center;
+    font-size: 42px;
+    line-height: 42px;
   }
   .hamburger {
     padding: 10px;
