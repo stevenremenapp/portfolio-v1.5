@@ -4,7 +4,7 @@ let saveButton,
   canvasIsClicked,
   previousBackgroundColor,
   currentBackgroundColor;
-let currentEmojiCode = "1F63B";
+let currentEmoji = "😻";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,7 +12,7 @@ function setup() {
   currentBackgroundColor = color(255, 255, 255);
   background(currentBackgroundColor);
   // Creating the save button for the file
-  saveButton = createButton(String.fromCodePoint(0x1f4be));
+  saveButton = createButton("💾");
   saveButton.position(10, 10, "fixed");
   saveButton.mousePressed(saveFile);
   saveButton.class("btn");
@@ -31,45 +31,22 @@ function setup() {
   emojiSelect.class("btn");
   emojiSelect.attribute("title", "Change Emoji");
   emojiSelect.attribute("aria-label", "Change Emoji");
-  emojiSelect.option(String.fromCodePoint(0x1f63b));
-  emojiSelect.option(String.fromCodePoint(0x1f308));
-  emojiSelect.option(String.fromCodePoint(0x1f4a9));
-  emojiSelect.option(String.fromCodePoint(0x1f493));
-  emojiSelect.option(String.fromCodePoint(0x1f984));
-  emojiSelect.option(String.fromCodePoint(0x1f61c));
-  emojiSelect.option(String.fromCodePoint(0x1f973));
-  emojiSelect.option(String.fromCodePoint(0x1f92f));
-  emojiSelect.option(String.fromCodePoint(0x1f920));
-  emojiSelect.option(String.fromCodePoint(0x1f976));
-  emojiSelect.option(String.fromCodePoint(0x1f576));
-  emojiSelect.option(String.fromCodePoint(0x1f441));
-  emojiSelect.option(String.fromCodePoint(0x1f412));
+  emojiSelect.option("😻");
+  emojiSelect.option("🌈");
+  emojiSelect.option("💩");
+  emojiSelect.option("💓");
+  emojiSelect.option("🦄");
+  emojiSelect.option("😜");
+  emojiSelect.option("🤯");
+  emojiSelect.option("🤠");
+  emojiSelect.option("🕶");
+  emojiSelect.option("👁");
+  emojiSelect.option("🐒");
   emojiSelect.changed(emojiSelectEvent);
-  startColor = color(255, 255, 255);
-  newColor = color(0, 255, 255);
-  amt = 0;
 }
 
 function emojiSelectEvent() {
-  let emojis = {
-    "🌈": "1F308",
-    "😻": "1F63B",
-    "💩": "1F4A9",
-    "💓": "1F493",
-    "🦄": "1F984",
-    "😜": "1F61C",
-    "🥳": "1F973",
-    "🤯": "1F92F",
-    "🤠": "1F920",
-    "🥶": "1F976",
-    "🕶": "1F576",
-    "👁": "1F441",
-    "🐒": "1F412"
-  };
-  let emoji = emojiSelect.value();
-  currentEmojiCode = emojis[emoji];
-  // console.log(emoji);
-  // console.log(currentEmojiCode);
+  currentEmoji = emojiSelect.value();
 }
 
 function windowResized() {
@@ -131,16 +108,9 @@ function draw() {
   // parameters for the current mouse position
   // and the previous mouse position
   if (mouseIsPressed && canvasIsClicked) {
-    // console.log(canvasIsClicked);
-    // console.log(buttonIsClicked());
     drawEmoji(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
-
-// The simple method variableEllipse() was created specifically
-// for this program. It calculates the speed of the mouse
-// and draws a small ellipse if the mouse is moving slowly
-// and draws a large ellipse if the mouse is moving quickly
 
 function drawEmoji(x, y, px, py) {
   let speed = abs(x - px) + abs(y - py);
@@ -148,7 +118,7 @@ function drawEmoji(x, y, px, py) {
     speed = 30;
   }
   textSize(speed);
-  text(String.fromCodePoint(`0x${currentEmojiCode}`), x, y);
+  text(currentEmoji, x, y);
 }
 
 function saveFile() {
