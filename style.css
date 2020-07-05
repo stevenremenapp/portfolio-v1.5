@@ -54,13 +54,13 @@ a {
   color: #252525;
   transition: 0.3s;
 }
-a:hover,
-a:focus {
-  color: magenta !important;
-}
 a:visited,
 a:active {
   color: #252525;
+}
+a:hover,
+a:focus {
+  color: magenta;
 }
 a.anchor {
   display: block;
@@ -88,6 +88,48 @@ a.anchor {
 }
 .home-top-bar {
   z-index: 2;
+}
+.social-column {
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+}
+.social-column::before {
+  content: "";
+  height: 60px;
+  width: 3px;
+  background: #252525;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(17px);
+}
+.social-column .icons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+.social-column .icons a {
+  height: auto;
+  width: 20px;
+  padding: 10px;
+  user-select: none;
+  text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
+    -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
+  transition: all 0.3s ease-in-out;
+}
+.social-column .icons a svg {
+  filter: url(#shadow);
+}
+.social-column .icons a:hover,
+.social-column .icons a:focus,
+.social-row .icons a:hover {
+  transform: translateY(-3px);
+  animation: fontColors 5s infinite;
+}
+.social-column .icons .email {
+  writing-mode: vertical-lr;
+  text-decoration: none;
+  margin-bottom: 12px;
 }
 .open-menu {
   position: fixed;
@@ -156,7 +198,7 @@ a.anchor {
 .open-menu .link-container .links a:hover,
 .open-menu .link-container .links a:focus {
   color: #252525 !important;
-  background: rgba(83, 147, 254, 0.5);
+  animation: colors 5s infinite;
 }
 .open-menu-grid .image-container {
   padding: 10rem 8rem;
@@ -165,7 +207,6 @@ a.anchor {
   height: 100%;
   max-width: 420px;
   border: 3px solid #252525;
-  animation: colors 10s infinite;
 }
 .content-wrapper {
   max-width: 1440px;
@@ -175,8 +216,8 @@ a.anchor {
 .content-wrapper .label {
   font-size: 13px;
   text-align: center;
-  color: #5393fe;
   font-weight: bold;
+  animation: fontColors 10s infinite;
 }
 .content-wrapper .title {
   max-width: 1200px;
@@ -212,7 +253,7 @@ a.anchor {
 .content-grid .headings .toc a:hover,
 .content-grid .headings .toc a:focus {
   color: #252525 !important;
-  background: rgba(83, 147, 254, 0.5);
+  animation: colors 10s infinite;
 }
 .content-grid .headings .toc a:first-of-type {
   margin-top: 0;
@@ -461,6 +502,32 @@ select.btn {
       background: cyan;
   }
 }
+@keyframes fontColors {
+  0%, 100% {
+    fill: rgb(128, 0, 128);
+    color: rgb(128, 0, 128);
+  }
+  16% {
+    fill: magenta;
+    color: magenta;
+  }
+  32% {
+    fill: orange;
+    color: orange;
+  }
+  48% {
+    fill: yellow;
+    color: yellow;
+  }
+  64% {
+    fill: green;
+    color: green;
+  }
+  80% {
+    fill: cyan;
+    color: cyan;
+  }
+}
 @media screen and (max-width: 1400px) {
   .open-menu-grid .link-container {
     padding: 10rem 9rem;
@@ -533,6 +600,9 @@ select.btn {
   .homepage-nav {
     display: none;
   }
+  .social-column {
+    display: none;
+  }
 }
 @media screen and (min-width: 576px) {
   .small-screen {
@@ -542,6 +612,9 @@ select.btn {
     display: none;
   }
   .home-top-bar {
+    display: none;
+  }
+  .social-row {
     display: none;
   }
 }
