@@ -134,12 +134,12 @@ a.anchor {
 .open-menu {
   position: fixed;
   top: 0;
-  left: -3px;
+  /* left: -3px; */
   width: 100vw;
   height: 100vh;
   background: white;
-  border-left: 3px solid #252525;
-  border-bottom: 3px solid #252525;
+  /* border-left: 3px solid #252525;
+  border-bottom: 3px solid #252525; */
   z-index: 5;
   visibility: hidden;
   transform: translate3d(100%,-100%,0);
@@ -157,56 +157,38 @@ a.anchor {
 .open-menu .open-menu-wrapper {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
-.open-menu .image-mobile {
-  animation: colors 10s infinite;
-}
-.open-menu-grid {
+.open-menu .open-menu-wrapper nav {
   width: 100%;
-  max-width: 1800px;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-}
-.open-menu-grid .link-container {
-  padding: 10rem 12rem;
-}
-.open-menu-grid .link-container .links {
-  height: 100%;
-}
-.open-menu-grid .link-container .links nav {
-  height: 100%;
-  max-width: 600px;
-  border: 3px solid #252525;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: stretch;
+  /* border-top: 3px solid #252525;
+  border-bottom: 3px solid #252525; */
 }
-.open-menu .link-container .links a {
+.open-menu .open-menu-wrapper nav a {
   font-family: "DDCHardware", "Bungee", sans-serif;
-  font-size: 52px;
-  line-height: 52px;
-  padding: 1rem;
-  border-top: 3px solid #252525;
   text-decoration: none;
+  font-size: 52px;
   flex: 1;
+  border-top: 3px solid #252525;
+  display: flex;
+  align-items: center;
 }
-.open-menu .link-container .links a:first-of-type {
-  border-top: none;
+.open-menu .open-menu-wrapper nav a:hover,
+.open-menu .open-menu-wrapper nav a:focus {
+  animation: colors 10s infinite;
+  color: #252525;
 }
-.open-menu .link-container .links a:hover,
-.open-menu .link-container .links a:focus {
-  color: #252525 !important;
-  animation: colors 5s infinite;
+.open-menu .open-menu-wrapper nav a:last-of-type {
+  border-bottom: 3px solid #252525;
 }
-.open-menu-grid .image-container {
-  padding: 10rem 8rem;
-}
-.open-menu-grid .image-container .image {
-  height: 100%;
-  max-width: 420px;
-  border: 3px solid #252525;
+.open-menu .open-menu-wrapper nav a span {
+  margin-left: 100px;
 }
 .content-wrapper {
   max-width: 1440px;
@@ -478,28 +460,22 @@ select.btn {
 }
 @keyframes colors {
   0%, 100% {
-    color: rgb(128, 0, 128);
     background: rgb(128, 0, 128);
   }
   16% {
-      color: magenta;
-      background: magenta;
+    background: magenta;
   }
   32% {
-      color: orange;
-      background: orange;
+    background: orange;
   }
   48% {
-      color: yellow;
-      background: yellow;
+    background: yellow;
   }
   64% {
-      color: green;
-      background: green;
+    background: green;
   }
   80% {
-      color: cyan;
-      background: cyan;
+    background: cyan;
   }
 }
 @keyframes fontColors {
@@ -551,20 +527,11 @@ select.btn {
   .content-grid .headings {
     display: none;
   }
-  .open-menu-grid .link-container {
-    padding: 10rem 3rem;
-  }
-  .open-menu-grid .image-container {
-    padding: 10rem 2rem;
-  }
 }
 @media screen and (max-width: 768px) {
   .large-screen .popup.orange {
     top: 28%;
     left: 70%;
-  }
-  .open-menu-grid {
-    grid-template-columns: 2fr 1fr;
   }
 }
 @media screen and (max-width: 576px) {
@@ -592,33 +559,21 @@ select.btn {
   .hamburger {
     padding: 10px;
   }
-  .open-menu-grid {
-    grid-template-columns: 1fr;
-  }
-  .open-menu-grid .link-container {
-    padding: 5rem 2rem 10rem 2rem;
-  }
-  .open-menu-grid .image-container {
-    display: none;
-  }
   .homepage-nav {
     display: none;
   }
   .social-column {
     display: none;
   }
+  .open-menu .open-menu-wrapper nav a span {
+    margin-left: 25px;
+  }
 }
 @media screen and (min-width: 576px) {
   .small-screen {
     display: none;
   }
-  .image-mobile {
-    display: none;
-  }
   .home-top-bar {
-    display: none;
-  }
-  .social-row {
     display: none;
   }
 }
