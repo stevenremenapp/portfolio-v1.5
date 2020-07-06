@@ -25,22 +25,6 @@ body {
   color: #252525;
   overflow: visible;
 }
-.homepage-nav {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: white;
-  border: 3px solid #252525;
-  padding: 5px 10px;
-  z-index: 10;
-}
-.homepage-nav a {
-  display: block;
-}
-.homepage-nav a:hover,
-.homepage-nav a:focus {
-  animation: fontColors 10s infinite;
-}
 h1,
 h2,
 h3 {
@@ -96,6 +80,10 @@ a.anchor {
 }
 .home-top-bar {
   z-index: 2;
+  border-bottom: none;
+}
+.home-top-bar .menu-container {
+  border-left: none;
 }
 .social-column {
   position: fixed;
@@ -654,9 +642,6 @@ select.btn {
   .hamburger {
     padding: 10px;
   }
-  .homepage-nav {
-    display: none;
-  }
   .social-column {
     display: none;
   }
@@ -673,9 +658,6 @@ select.btn {
 }
 @media screen and (min-width: 576px) {
   .small-screen {
-    display: none;
-  }
-  .home-top-bar {
     display: none;
   }
 }
