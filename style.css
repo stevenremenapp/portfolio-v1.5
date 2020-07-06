@@ -68,7 +68,7 @@ a.anchor {
   width: 100%;
   background: white;
 }
-.top-bar .menu-container {
+.menu-container {
   position: fixed;
   top: 0;
   right: 5px;
@@ -78,11 +78,8 @@ a.anchor {
   align-items: center;
   border-left: 3px solid #252525;
 }
-.home-top-bar {
+.home-menu.menu-container {
   z-index: 2;
-  border-bottom: none;
-}
-.home-top-bar .menu-container {
   border-left: none;
 }
 .social-column {
