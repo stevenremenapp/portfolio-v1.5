@@ -6,6 +6,11 @@
   font-weight: normal;
   font-style: normal;
 }
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +18,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body {
   font-family: "Source Sans Pro", sans-serif;
@@ -32,6 +36,10 @@ body {
 }
 .homepage-nav a {
   display: block;
+}
+.homepage-nav a:hover,
+.homepage-nav a:focus {
+  animation: fontColors 10s infinite;
 }
 h1,
 h2,
@@ -109,15 +117,17 @@ a.anchor {
   margin-bottom: 60px;
 }
 .social-column .icons a {
-  height: auto;
-  width: 20px;
   padding: 10px;
   user-select: none;
   text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
+    -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white,
+    -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white,
     -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
   transition: all 0.3s ease-in-out;
 }
 .social-column .icons a svg {
+  width: 20px;
+  height: auto;
   filter: url(#shadow);
 }
 .social-column .icons a:hover,
@@ -134,6 +144,8 @@ a.anchor {
 .open-menu {
   position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
   /* left: -3px; */
   width: 100vw;
   height: 100vh;
@@ -149,46 +161,129 @@ a.anchor {
   position: fixed;
   top: 10px;
   right: 20px;
+  z-index: 5;
 }
 .open-menu.open {
   transform: translateZ(0);
   visibility: visible;
 }
-.open-menu .open-menu-wrapper {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-}
-.open-menu .open-menu-wrapper nav {
+.menu {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* padding: 10vh 0 25vh; */
+	--offset: 20vw;
+	--move-initial: calc(-25% + var(--offset));
+	--move-final: calc(-50% + var(--offset));
+  /* --item-font-size: 10vw; */
   width: 100%;
   height: 80vh;
   display: flex;
   flex-direction: column;
-  /* border-top: 3px solid #252525;
-  border-bottom: 3px solid #252525; */
 }
-.open-menu .open-menu-wrapper nav a {
-  font-family: "DDCHardware", "Bungee", sans-serif;
+
+.menu__item {
+	cursor: default;
+	position: relative;
+  z-index: 2;
+  flex: 1;
+  border-top: 3px solid #252525;
+}
+
+.menu__item:last-of-type {
+  border-bottom: 3px solid #252525;
+}
+
+.menu__item:hover {
+  animation: colors 10s infinite;
+}
+
+.menu__item-link {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	-webkit-text-stroke: 1.5px #000;
+	text-stroke: 1.5px #000;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+  transition: opacity 0.4s;
   text-decoration: none;
   font-size: 52px;
   flex: 1;
-  border-top: 3px solid #252525;
   display: flex;
   align-items: center;
+  height: 100%;
 }
-.open-menu .open-menu-wrapper nav a:hover,
-.open-menu .open-menu-wrapper nav a:focus {
-  animation: colors 10s infinite;
-  color: #252525;
-}
-.open-menu .open-menu-wrapper nav a:last-of-type {
-  border-bottom: 3px solid #252525;
-}
-.open-menu .open-menu-wrapper nav a span {
+
+.menu__item-link span {
   margin-left: 100px;
+}
+
+.menu__item-link:hover {
+	transition-duration: 0.1s;
+	opacity: 0;
+}
+
+/* Make sure 3 items are visible in the viewport by setting suitable font size. */
+
+.marquee {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.marquee__inner {
+	width: fit-content;
+	display: flex;
+	position: relative;
+	transform: translate3d(var(--move-initial), 0, 0);
+	animation: marquee 14s linear infinite;
+	animation-play-state: paused;
+	opacity: 0;
+	transition: opacity 0.1s;
+}
+
+.menu__item-link:hover ~ .marquee .marquee__inner {
+	animation-play-state: running;
+	opacity: 1;
+	transition-duration: 0.4s;
+}
+
+.marquee span {
+	text-align: center;
+}
+
+.menu__item-link,
+.marquee span {
+  font-family: "DDCHardware", "Bungee", sans-serif;
+	white-space: nowrap;
+	font-size: 72px;
+	padding: 0 1vw;
+	font-weight: 900;
+	line-height: 1.15;
+}
+
+.marquee span {
+	font-style: italic;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate3d(var(--move-initial), 0, 0);
+	}
+
+	100% {
+		transform: translate3d(var(--move-final), 0, 0);
+	}
 }
 .content-wrapper {
   max-width: 1440px;
@@ -566,6 +661,13 @@ select.btn {
     display: none;
   }
   .open-menu .open-menu-wrapper nav a span {
+    margin-left: 25px;
+  }
+  .menu__item-link,
+  .marquee span {
+    font-size: 54px;
+  }
+  .menu__item-link span {
     margin-left: 25px;
   }
 }
