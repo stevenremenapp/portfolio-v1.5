@@ -1,10 +1,123 @@
 h1 {
   text-align: center;
 }
+h2 {
+  text-decoration: none;
+}
 
 canvas {
   opacity: 0.15;
-  /* z-index: 0; */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin-top: 100px;
+}
+.project-grid_image {
+  grid-column: 1/8;
+  grid-row: 1/-1;
+  position: relative;
+  border: 3px solid #252525;
+}
+.project-grid_image .project-grid_image_container {
+  display: flex;
+}
+.project-grid_image a:after {
+  animation: colors 10s infinite;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project-grid_image_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s;
+}
+.project-grid_image a:hover img,
+.project-grid_image a:focus img {
+  opacity: 0.5;
+}
+.project-grid_image a:hover:after,
+.project-grid_image a:focus:after {
+  opacity: 0.5;
+}
+.project-grid_image a:hover .project-grid_image_overlay,
+.project-grid_image a:focus .project-grid_image_overlay {
+  opacity: 1;
+}
+.project-grid_image img {
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s;
+}
+.project-grid_data {
+  grid-column: 8/-1;
+  grid-row: 1/-1;
+  text-align: right;
+}
+.project-grid_data_tools_label {
+  font-size: 13px;
+  font-weight: bold;
+}
+.project-grid_data_tool_list {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.project-grid_data_tool_list li {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+.project-grid_data_links a {
+  padding: 10px;
+  text-decoration: none;
+}
+.project-grid_data_links a:last-of-type {
+  padding-right: 0;
+}
+.project-grid_data_links svg {
+  width: 25px;
+  height: auto;
+}
+.project-grid_text {
+  grid-column: 1/-1;
+}
+
+@media screen and (max-width: 768px) {
+  .project-grid {
+    grid-template-rows: auto 1fr;
+  }
+  .project-grid_image {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+  }
+  .project-grid_data {
+    grid-column: 1/-1;
+    grid-row: auto;
+  }
 }
 
 @media screen and (max-width: 576px) {
