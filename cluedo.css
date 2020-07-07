@@ -17,8 +17,14 @@ canvas {
   gap: 10px;
   margin-top: 100px;
 }
-.project-grid_image {
+.project-grid_image.left {
   grid-column: 1/8;
+  grid-row: 1/-1;
+  position: relative;
+  border: 3px solid #252525;
+}
+.project-grid_image.right {
+  grid-column: 6/-1;
   grid-row: 1/-1;
   position: relative;
   border: 3px solid #252525;
@@ -70,10 +76,15 @@ canvas {
   width: 100%;
   transition: opacity 0.3s;
 }
-.project-grid_data {
+.project-grid_data.right {
   grid-column: 8/-1;
   grid-row: 1/-1;
   text-align: right;
+}
+.project-grid_data.left {
+  grid-column: 1/6;
+  grid-row: 1/-1;
+  text-align: left;
 }
 .project-grid_data_tools_label {
   font-size: 13px;
@@ -83,20 +94,33 @@ canvas {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+}
+.project-grid_data_tool_list.right {
   justify-content: flex-end;
 }
+.project-grid_data_tool_list.left {
+  justify-content: flex-start;
+}
 .project-grid_data_tool_list li {
-  margin-left: 20px;
   margin-bottom: 5px;
   font-size: 13px;
   opacity: 0.75;
+}
+.project-grid_data_tool_list.left li {
+  margin-right: 20px;
+}
+.project-grid_data_tool_list.right li {
+  margin-left: 20px;
 }
 .project-grid_data_links a {
   padding: 10px;
   text-decoration: none;
 }
-.project-grid_data_links a:last-of-type {
+.project-grid_data_links.right a:last-of-type {
   padding-right: 0;
+}
+.project-grid_data_links.left a:first-of-type {
+  padding-left: 0;
 }
 .project-grid_data_links svg {
   width: 25px;
@@ -111,10 +135,15 @@ canvas {
     grid-template-rows: auto 1fr;
   }
   .project-grid_image {
+    margin: 1.5rem 0 1rem 0;
+  }
+  .project-grid_image.right,
+  .project-grid_image.left {
     grid-column: 1/-1;
     grid-row: 2/-1;
   }
-  .project-grid_data {
+  .project-grid_data.right,
+  .project-grid_data.left {
     grid-column: 1/-1;
     grid-row: auto;
   }

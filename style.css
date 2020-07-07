@@ -80,7 +80,7 @@ button:hover {
   border-bottom: 3px solid #252525;
   width: 100%;
   background: white;
-  z-index: 2;
+  z-index: 3;
 }
 .menu-container {
   position: fixed;
@@ -286,7 +286,7 @@ button:hover {
 }
 .content-wrapper {
   max-width: 1440px;
-  margin: 150px auto 100px auto;
+  margin: 150px auto 200px auto;
   padding: 0 30px;
 }
 .content-wrapper .label {
@@ -304,8 +304,8 @@ button:hover {
 }
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 14em;
-  column-gap: 6em;
+  grid-template-columns: 1fr 12em;
+  column-gap: 4em;
 }
 .content-grid .content {
   max-width: 900px;
@@ -471,7 +471,7 @@ canvas {
   border: 3px solid #252525;
   padding: 5px 10px;
   font-size: 24px;
-  z-index: 2;
+  z-index: 3;
 }
 select.btn {
   padding: 4px 10px;
@@ -614,7 +614,7 @@ select.btn {
     padding: 10rem 4rem;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1000px) {
   .content-grid {
     grid-template-columns: 1fr;
   }
