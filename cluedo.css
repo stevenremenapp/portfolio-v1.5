@@ -112,9 +112,11 @@ canvas {
 .project-grid_data_tool_list.right li {
   margin-left: 20px;
 }
+.project-grid_data a {
+  text-decoration: none;
+}
 .project-grid_data_links a {
   padding: 10px;
-  text-decoration: none;
 }
 .project-grid_data_links.right a:last-of-type {
   padding-right: 0;
