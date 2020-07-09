@@ -293,6 +293,7 @@ button:hover {
   font-size: 13px;
   text-align: center;
   font-weight: bold;
+  height: 3px;
   animation: fontColors 10s infinite;
 }
 .content-wrapper .title {
