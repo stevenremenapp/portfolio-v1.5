@@ -132,6 +132,23 @@ canvas {
   grid-column: 1/-1;
 }
 
+figure {
+  margin: 25px 0;
+}
+figcaption {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.caption-icon {
+  font-weight: bold;
+  margin-right: 10px;
+}
+figure img {
+  height: auto;
+  width: 100%;
+  border: 3px solid #252525;
+}
+
 @media screen and (max-width: 768px) {
   .project-grid {
     grid-template-rows: auto 1fr;

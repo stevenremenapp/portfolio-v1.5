@@ -8,7 +8,7 @@ document.addEventListener(
     const removeActive = link => tocLinks[link].classList.remove("active");
     const removeAllActive = link =>
       [...Array(sections.length).keys()].forEach(link => removeActive(link));
-    const sectionMargin = 50;
+    const sectionMargin = 200;
     let currentActive = 1;
     // console.log(sections);
     // console.log([...sections]);

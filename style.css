@@ -39,6 +39,9 @@ h3 {
   text-decoration: underline;
   font-weight: normal;
 }
+p {
+  line-height: 1.75;
+}
 ul {
   list-style: none;
 }
@@ -60,6 +63,9 @@ a.anchor {
   top: -140px;
   visibility: hidden;
 }
+button {
+  font-family: "Source Sans Pro", sans-serif;
+}
 button:hover {
   cursor: pointer;
 }
@@ -72,6 +78,9 @@ button:hover {
 .primary-btn:hover {
   transform: translate3d(-3px, -3px, 0);
   box-shadow: 3px 3px 0 0 #252525;
+}
+.primary-btn.colors:hover {
+  animation: colors 10s infinite;
 }
 .top-bar {
   position: fixed;
@@ -326,6 +335,10 @@ button:hover {
   border-bottom: 3px solid #252525;
   text-decoration: none;
 }
+.content-grid .headings .toc a.subheading {
+  padding-left: 28px;
+  font-size: 14px;
+}
 .content-grid .headings .toc a.active,
 .content-grid .headings .toc a:hover,
 .content-grid .headings .toc a:focus {
@@ -337,6 +350,9 @@ button:hover {
 }
 .content-grid .headings .toc a:last-of-type {
   border-bottom: none;
+}
+.content-list {
+  padding-left: 40px;
 }
 .container {
   height: 100vh;
@@ -434,7 +450,7 @@ button:hover {
   animation: 1s ease-in 1s forwards subtitle;
 }
 .subtitle-text p {
-  margin: 5px 0;
+  margin: 0;
   text-shadow: 2px 2px 10px white, -2px -2px 10px white, 2px 2px 10px white,
     -2px -2px 10px white, 2px 2px 10px white, -2px -2px 10px white;
 }
@@ -476,7 +492,7 @@ canvas {
 }
 select.btn {
   padding: 4px 10px;
-  min-height: 44px;
+  min-height: 47px;
 }
 .btn:hover,
 .btn:focus {
