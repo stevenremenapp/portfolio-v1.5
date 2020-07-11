@@ -1,0 +1,23 @@
+{
+  "name": "porfoliov1.5",
+  "version": "1.0.0",
+  "description": "My portfolio, version 1.5",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenremenapp/portfolio-v1.5.git"
+  },
+  "author": "Steven Remenapp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevenremenapp/portfolio-v1.5/issues"
+  },
+  "homepage": "https://github.com/stevenremenapp/portfolio-v1.5#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}

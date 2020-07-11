@@ -9,11 +9,11 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cluedo.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/content.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-    <script src="script.js"></script>
-    <script src="content.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/content.js"></script>
     <title>🐣🐥🐔 | Steven Remenapp</title>
   </head>
 <body>
@@ -46,41 +46,41 @@
           <p>The plan was to start out with a designer providing wireframes from the beginning, but it didn't happen and development proceeded. I ended up stepping in as the initial UI designer for the application, with direction from the client that they liked the Pinterest gridded layout, but they preferred it with sharper edges. I started out designing the homepage and public pages first, and will detail that evolution below.</p>
           <p>Initial design inspirations:</p>
           <figure>
-            <a href="./img/pinterest.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/pinterest.png" alt="Image of the Pinterest website.">
+            <a href="/img/pinterest.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/pinterest.png" alt="Image of the Pinterest website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The Pinterest design everyone knows.</figcaption>
           </figure>
           <figure>
-            <a href="./img/uncode.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/uncode.png" alt="Image of grid photo layout on a website.">
+            <a href="/img/uncode.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/uncode.png" alt="Image of grid photo layout on a website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The grid that the client particularly liked.</figcaption>
           </figure>
           <p>Unfortunately I don't have any screenshots of the original homepage, but it was largely a grid comprised of projects with a much larger (and uglier!) hero section than the redesigned version. I have a couple of shots of the original dashboard and the corresponding public page for that project created in the pro's dashboard. I used the grid for images throughout the app and separated important info and action items into columns.</p>
           <figure>
-            <a href="./img/tagpro-old-dashboard.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-old-dashboard.png" alt="Image of the initial design of the pro dashboard on the TagPro website.">
+            <a href="/img/tagpro-old-dashboard.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-old-dashboard.png" alt="Image of the initial design of the pro dashboard on the TagPro website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The initial design of the pro's dashboard, where they could update their professional profile and create projects. This is the project creation page.</figcaption>
           </figure>
           <figure>
-            <a href="./img/tagpro-old-public-page.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-old-public-page.png" alt="Image of the initial design of the public project page on the TagPro website.">
+            <a href="/img/tagpro-old-public-page.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-old-public-page.png" alt="Image of the initial design of the public project page on the TagPro website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The initial design of the public-facing project page created when a pro publishes a project.</figcaption>
           </figure>
           <p>I felt fortunate to be able to struggle through trying to design the UI for this application and also to have a professional designer step in and redesign it. Although it was a lot of effort right at the end of the project to redesign everything, it was so helpful to see what changes were made, and why. It resulted in a good learning experience for me and a better result overall.</p>
           <p>Below are the same pages as above, but redesigned:</p>
           <figure>
-            <a href="./img/tagpro-new-dashboard.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-new-dashboard.png" alt="Image of the final design of the pro dashboard on the TagPro website.">
+            <a href="/img/tagpro-new-dashboard.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-new-dashboard.png" alt="Image of the final design of the pro dashboard on the TagPro website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The final design of the pro's dashboard, where they could update their professional profile and create projects. This is the project creation page.</figcaption>
           </figure>
           <figure>
-            <a href="./img/tagpro-new-public-page.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-new-public-page.png" alt="Image of the initial design of the public project page on the TagPro website.">
+            <a href="/img/tagpro-new-public-page.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-new-public-page.png" alt="Image of the initial design of the public project page on the TagPro website.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The final design of the public-facing project page created when a pro publishes a project.</figcaption>
           </figure>
@@ -88,15 +88,15 @@
           <a class="anchor" id="deep-dive-search"></a>
           <p>From the beginning we knew that search would be an integral part of this application, and we followed Thumbtack's lead of matching pros and projects to specific service type keywords. The project architect made the decision that GeoJSON search results wasn't necessary at this point in the project, so we designed search around a specific dictionary of service keywords and a limited set of filters that differed based on whether the user searched pros or projects. I matched the search results grid to the homepage grid and paginated to 30 results shown at once. When the user clicks "View More Results" another 30 result cards are added to the bottom of the grid, until the end is reached. I also implemented stateful search based on the queries in the URL so that if the user decided to press forward or back in their browser, or they were sent a search link URL, it would return the appropriate results.</p>
           <figure>
-            <a href="./img/tagpro-search.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-search.png" alt="Image of the TagPro search results page.">
+            <a href="/img/tagpro-search.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-search.png" alt="Image of the TagPro search results page.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The search results page, using lorem ipsum data.</figcaption>
           </figure>
           <p>Perhaps the most interesting part of the redesign for me was the inclusion of a custom search component that autocompleted the user's search input and allowed them to choose a search keyword for either a pro or project search. I used fuse.js, rather than explicitly matching strings to give the user some leeway with spelling their inputs. Similar to Thumbtack's implementation, without choosing a matching keyword the user could not complete a search. I built this component from scratch, and used <a href="https://autocomplete.trevoreyre.com/#/vue-component" target="_blank" rel="noopener noreferrer">Trevor Eyre's Vue autocomplete component</a> to handle the autocomplete dropdown functionality. I learned a lot in building out this component, and it helped me refactor the original separate search inputs into one portable search component.</p>
           <figure>
-            <a href="./img/tagpro-search-component.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-search-component.png" alt="Image of the TagPro search component on the homepage.">
+            <a href="/img/tagpro-search-component.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-search-component.png" alt="Image of the TagPro search component on the homepage.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The custom search component on TagPro's homepage.</figcaption>
           </figure>
@@ -105,8 +105,8 @@
           <p>Tagging (or favoriting) pros, projects, and photos was always part of the client's vision from the beginning. We created a set of tagging APIs that I can call to in order to take the correct actions for the user. I was initially using an ugly plus symbol that changed color based on tag status, but the designer moved toward badges in the banner elements and a badge (un-tagged) and circle indicator (tagged) in card elements to indicate tag status. My initial implementation of the redesign also waited for the API call to be returned before switching the UI, but the designer said it should happen immediately, so I modified the API calls to switch immediately and only return to the original state if the call could not be completed.</p>
           <p>The image below shows the public professional profile page with a variety of tag indicators in the banner and card elements. The untagged badge in the card elements only shows on hover for large screens and is always present on smaller screens.</p>
           <figure>
-            <a href="./img/tagpro-pro-page.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-pro-page.png" alt="Image of the TagPro professional profile page showing the tagging indicators.">
+            <a href="/img/tagpro-pro-page.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-pro-page.png" alt="Image of the TagPro professional profile page showing the tagging indicators.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The professional profile page with a variety of tag buttons/indicators.</figcaption>
           </figure>
@@ -116,8 +116,8 @@
           <p>The public pages (i.e. the pro's business profile page and any project pages for the project's they publish) aggregate a public-friendly set of the data input by the pro in their dashboard related to their profile and projects. The goal was to make them attractive and photo-friendly so that professionals might share them as a portfolio. Users can find these pages by browsing the mainpage or by matching search keywords.</p>
           <p>I'm not adding photos of the public pages because there are screenshots for them above and there's no need for this to be longer. The screenshot below shows the home of the pro's dashboard, which allows them quick access to anything they might need to accomplish.</p>
           <figure>
-            <a href="./img/tagpro-pro-dashboard-profile.png" target="_blank" rel="noopener noreferrer">
-              <img src="./img/tagpro-pro-dashboard-profile.png" alt="Image of the TagPro professional user's dashboard home.">
+            <a href="/img/tagpro-pro-dashboard-profile.png" target="_blank" rel="noopener noreferrer">
+              <img src="/img/tagpro-pro-dashboard-profile.png" alt="Image of the TagPro professional user's dashboard home.">
             </a>
             <figcaption><span class="caption-icon">&#x3e;&#x3e;&#x3e;</span>The professional user's dashboard.</figcaption>
           </figure>
@@ -205,7 +205,7 @@
     </button>
     <nav class="menu">
       <div class="menu__item">
-        <a href="./" class="menu__item-link"><span>HOME</span></a>
+        <a href="/" class="menu__item-link"><span>HOME</span></a>
         <div class="marquee">
           <div class="marquee__inner" aria-hidden="true">
             <span>HOME /</span>
@@ -228,7 +228,7 @@
         </div>
       </div>
       <div class="menu__item">
-        <a href="./work.html" class="menu__item-link"><span>WORK</span></a>
+        <a href="/work" class="menu__item-link"><span>WORK</span></a>
         <div class="marquee">
           <div class="marquee__inner" aria-hidden="true">
             <span>WORK /</span>
@@ -251,7 +251,7 @@
         </div>
       </div>
       <div class="menu__item">
-        <a href="./library.html" class="menu__item-link"><span>LIBRARY</span></a>
+        <a href="/library" class="menu__item-link"><span>LIBRARY</span></a>
         <div class="marquee">
           <div class="marquee__inner" aria-hidden="true">
             <span>LIBRARY /</span>
@@ -270,7 +270,7 @@
         </div>
       </div>
       <div class="menu__item">
-        <a href="./fun.html" class="menu__item-link"><span>FUN</span></a>
+        <a href="/fun" class="menu__item-link"><span>FUN</span></a>
         <div class="marquee">
           <div class="marquee__inner" aria-hidden="true">
             <span>FUN /</span>
@@ -316,7 +316,7 @@
         </div>
       </div>
       <div class="menu__item">
-        <a href="./remenapp_portfolio_resume.pdf" target="_blank" rel="noopener noreferrer" class="menu__item-link"><span>RESUME</span></a>
+        <a href="/remenapp_portfolio_resume.pdf" target="_blank" rel="noopener noreferrer" class="menu__item-link"><span>RESUME</span></a>
         <div class="marquee">
           <div class="marquee__inner" aria-hidden="true">
             <span>RESUME /</span>

@@ -9,11 +9,11 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cluedo.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/content.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-    <script src="script.js"></script>
-    <script src="content.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/content.js"></script>
     <title>🐣🐥🐔 | Steven Remenapp</title>
   </head>
   <body>
@@ -27,49 +27,48 @@
       </div>
     </header>
     <main class="content-wrapper">
-      <p class="label">USE YOUR LIBRARIES</p>
-      <h1 class="title">LIBRARY PROJECTS</h1>
+      <div class="label">Work Work Work Work Work</div>
+      <h1 class="title">WORK</h1>
       <div class="content-grid">
         <div class="content">
           <h2>INTRODUCTION</h2>
           <a class="anchor" id="intro"></a>
-          <p>Before working as a software developer I worked for about 7 years in libraries throughout Metro Detroit, including large, small, academic, and public libraries. This background is what motivated me to teach myself software development. Many libraries, especially the smaller public libraries I love, rely on a hodge-podge of cheap and free-tier software to meet their always expanding public service needs. I also had the opportunity to work at Wayne State University Libraries, where I observed how effective a small software team could be when creating custom tools and resources. After years of frustration and assuming I couldn't learn software development, I finally decided to give it a try. The projects below are some of my earliest, and the fact that people actually used and enjoyed them were enough to keep me on this path. Maybe/hopefully I'll make software for libraries again.</p>
-          <a class="anchor" id="map"></a>
+          <p>The projects below stem from paid contract work, internship work, and personal projects to learn about new technologies. My main skillset is on the frontend, but I am interested in learning more about full-stack development. I am particularly interested in Node because it's in the JavaScript ecosystem, but I have also been working with Go recently. No matter what I'm working on, my overarching interest is the ways in which technology can solve problems for people.</p>
+          <a class="anchor" id="tagpro"></a>
           <div class="project-grid">
             <div class="project-grid_image left">
-              <a href="https://stevenremenapp.github.io/tlnmap/" target="_blank" rel="noopener noreferrer">
+              <a href="/tagpro">
                 <div class="project-grid_image_container">
-                  <img src="./img/tln-map.png" alt="Image of my Library Network Cooperative map project.">
+                  <img src="/img/tagpro.png" alt="Image of the TagPro website.">
                 </div>
                 <div class="project-grid_image_overlay">
-                  <button type="button" class="primary-btn" tabindex="-1">Go to project</button>
+                  <button type="button" class="primary-btn" tabindex="-1">Read more</button>
                 </div>
               </a>
             </div>
             <div class="project-grid_data right">
-              <a href="https://stevenremenapp.github.io/tlnmap/" target="_blank" rel="noopener noreferrer">
-                <h2 class="project-grid_data_heading">THE LIBRARY NETWORK COOPERATIVE MAP</h2>
+              <a href="/tagpro">
+                <h2 class="project-grid_data_heading">TAGPRO</h2>
               </a>
               <p class="project-grid_data_tools_label">TOOLS</p>
-              <ul class="project-grid_data_tool_list right">
-                <li>React</li>
-                <li>Mapbox GL JS</li>
-                <li>react-map-gl library</li>
+              <ul class="project-grid_data_tool_list right" style="margin-bottom: 5px;">
+                <li>Figma</li>
+                <li>Zeplin</li>
+                <li>Vue</li>
+                <li>Vuex</li>
+                <li>Vue Router</li>
+                <li>BootstrapVue</li>
+                <li>Firebase Authentication</li>
+                <li>Google App Engine</li>
+                <li>I also wrote a little bit of Go!</li>
               </ul>
               <div class="project-grid_data_links right">
-                <a href="https://github.com/stevenremenapp/tlnmap" title="Github" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 438.549 438.549">
-                    <title>GitHub</title>
-                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffffff" />
-                      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffffff" />
-                      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffffff" />
-                    </filter>
-                    <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365 c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63 c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996 c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136 c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559 c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559 c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997 c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851 c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136 c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41 c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126 c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817 c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994 c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849 c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24 c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979 c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146 c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995 c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906 C438.536,184.851,428.728,148.168,409.132,114.573z"></path>
-                  </svg>
+                <p style="font-size: 13px; margin-top: 5px;">This code is not public.</p>
+                <a href="/tagpro">
+                  <button class="primary-btn colors">Read More</button>
                 </a>
-                <a href="https://stevenremenapp.github.io/tlnmap/" title="External Link" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 194.818 194.818">
+                <a href="https://tagpro.com/" title="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 194.818 194.818" style="margin-bottom: -6px;">
                     <title>External Link</title>
                     <g>
                       <path d="M185.818,2.161h-57.04c-4.971,0-9,4.029-9,9s4.029,9,9,9h35.312l-86.3,86.3c-3.515,3.515-3.515,9.213,0,12.728 c1.758,1.757,4.061,2.636,6.364,2.636s4.606-0.879,6.364-2.636l86.3-86.3v35.313c0,4.971,4.029,9,9,9s9-4.029,9-9v-57.04 C194.818,6.19,190.789,2.161,185.818,2.161z"></path>
@@ -80,16 +79,16 @@
               </div>
             </div>
             <div class="project-grid_text">
-              <p>This is a resource that I wish existed when I started working in <a href="https://tln.lib.mi.us/md/" target="_blank" rel="noopener noreferrer">The Library Network (TLN) libraries</a>. It is a map app utilizing Mapbox GL JS, React, and uber’s react-map-gl library to render a map of TLN libraries and includes a map that is responsive to user input Includes responsive map that conditionally renders an infowindow based on hovered/selected library and a sidebar that allows users to search and filter libraries by text input and selected lending policies.</p>
-              <p>This was the first web project in which I systematically solicited feedback from users in order to improve the final product; please see the README in the Github repo for more info on this.</p>
+              <p>I was the solo frontend developer and initial (not final!) designer working on contract to complete this project with a backend developer and project architect. We were hired as a team to create the client's vision of a "Home Servicing Social Networking Platform" and collaborated with the client to create design documents, meet deliverable deadlines, and shift priorities as needed. This is soon to be in beta release.</p>
+              <p>Main features include: app access based on authentication, type of user, and subscription (implemented by client request using Stripe Billing, but later removed by client request); private professional profile and project creation with corresponding public pages; project rating; stateful search with filtering; favoriting pros, projects, and photos; connecting consumers with pros via project request messages.</p>
             </div>
           </div>
-          <a class="anchor" id="scorekeeper"></a>
+          <a class="anchor" id="sso"></a>
           <div class="project-grid">
             <div class="project-grid_image right">
-              <a href="https://stevenremenapp.github.io/scorekeeper/" target="_blank" rel="noopener noreferrer">
+              <a href="http://steve-sso-admin.s3-website.us-east-2.amazonaws.com/" target="_blank" rel="noopener noreferrer">
                 <div class="project-grid_image_container">
-                  <img src="./img/scorekeeper.png" alt="Image of my Battle of the Books scorekeeper project.">
+                  <img src="/img/sso.png" alt="Image of my Quicken Loans Single Sign On project.">
                 </div>
                 <div class="project-grid_image_overlay">
                   <button type="button" class="primary-btn" tabindex="-1">Go to project</button>
@@ -97,17 +96,21 @@
               </a>
             </div>
             <div class="project-grid_data left">
-              <a href="https://stevenremenapp.github.io/scorekeeper/" target="_blank" rel="noopener noreferrer">
-                <h2 class="project-grid_data_heading">BATTLE OF THE BOOKS SCOREKEEPER</h2>
+              <a href="http://steve-sso-admin.s3-website.us-east-2.amazonaws.com/">
+                <h2 class="project-grid_data_heading">QUICKEN LOANS SINGLE-SIGN-ON VIEWER</h2>
               </a>
               <p class="project-grid_data_tools_label">TOOLS</p>
               <ul class="project-grid_data_tool_list left">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JS</li>
+                <li>Angular</li>
+                <li>RxJS</li>
+                <li>AWS DynamoDB</li>
+                <li>AWS Gateway</li>
+                <li>AWS Lambda</li>
+                <li>AWS S3</li>
+                <li>Jasmine</li>
               </ul>
               <div class="project-grid_data_links left">
-                <a href="https://github.com/stevenremenapp/scorekeeper" title="Github" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/stevenremenapp/ql-sso-admin" title="Github" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 438.549 438.549">
                     <title>GitHub</title>
                     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -118,7 +121,7 @@
                     <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365 c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63 c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996 c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136 c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559 c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559 c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997 c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851 c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136 c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41 c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126 c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817 c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994 c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849 c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24 c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979 c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146 c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995 c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906 C438.536,184.851,428.728,148.168,409.132,114.573z"></path>
                   </svg>
                 </a>
-                <a href="https://stevenremenapp.github.io/scorekeeper/" title="External Link" target="_blank" rel="noopener noreferrer">
+                <a href="http://steve-sso-admin.s3-website.us-east-2.amazonaws.com/" title="External Link" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 194.818 194.818">
                     <title>External Link</title>
                     <g>
@@ -130,16 +133,16 @@
               </div>
             </div>
             <div class="project-grid_text">
-              <p>A coworker asked if I could make her a scorekeeper to use in her Battle of the Books program. Previously, she had been using two apps, which meant another staff member was needed to handle scorekeeping while she ran the event.</p>
-              <p>Given specific needs, I created this scorekeeper which includes a timer, sound effects, and space to track the scores of four teams. I also learned about using objects to maintain state and handling session storage in the browser. Battle of the Books now only requires one librarian and they can keep score from their phone.</p>
+              <p>This is a prototype app built during my internship at Quicken Loans to help surface frequently used and difficult-to-access DynamoDB data for engineers working on a Single-Sign-On project. The requirements included using AWS serverless technologies, and I chose Angular because Quicken Loans uses Angular extensively. I worked on this project at the end of my internship, presented it to the engineers using it, iterated on their feedback, and then passed it off before I left.</p>
+              <p>This was my first project using serverless technologies, and also my first project using RxJS. I learned a lot about different serverless options and how to implement them, albeit on a small scale. I also learned about reactive programming and the Observer pattern as a result of using Angular and RxJS.</p>
             </div>
           </div>
-          <a class="anchor" id="hunt"></a>
+          <a class="anchor" id="learning"></a>
           <div class="project-grid">
             <div class="project-grid_image left">
-              <a href="https://stevenremenapp.github.io/bpl/" target="_blank" rel="noopener noreferrer">
+              <a href="https://steve-learning.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                 <div class="project-grid_image_container">
-                  <img src="./img/hunt.png" alt="Image of my Library Network Cooperative map project.">
+                  <img src="/img/learning-platform.png" alt="Image of my Learning Platform project.">
                 </div>
                 <div class="project-grid_image_overlay">
                   <button type="button" class="primary-btn" tabindex="-1">Go to project</button>
@@ -147,18 +150,20 @@
               </a>
             </div>
             <div class="project-grid_data right">
-              <a href="https://stevenremenapp.github.io/bpl/" target="_blank" rel="noopener noreferrer">
-                <h2 class="project-grid_data_heading">LIBRARY SCAVENGER HUNT</h2>
+              <a href="https://steve-learning.herokuapp.com/">
+                <h2 class="project-grid_data_heading">LEARNING PLATFORM</h2>
               </a>
               <p class="project-grid_data_tools_label">TOOLS</p>
               <ul class="project-grid_data_tool_list right">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
-                <li>JS</li>
+                <li>React</li>
+                <li>Node</li>
+                <li>Express</li>
+                <li>Knex.js</li>
+                <li>PostgreSQL</li>
+                <li>Heroku</li>
               </ul>
               <div class="project-grid_data_links right">
-                <a href="https://github.com/stevenremenapp/bpl" title="Github" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/stevenremenapp/learning-platform" title="Github" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 438.549 438.549">
                     <title>GitHub</title>
                     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -169,7 +174,7 @@
                     <path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365 c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63 c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996 c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136 c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559 c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559 c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997 c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851 c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136 c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41 c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126 c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817 c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994 c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849 c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24 c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979 c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146 c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995 c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906 C438.536,184.851,428.728,148.168,409.132,114.573z"></path>
                   </svg>
                 </a>
-                <a href="https://stevenremenapp.github.io/bpl/" title="External Link" target="_blank" rel="noopener noreferrer">
+                <a href="https://steve-learning.herokuapp.com/" title="External Link" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 194.818 194.818">
                     <title>External Link</title>
                     <g>
@@ -181,17 +186,17 @@
               </div>
             </div>
             <div class="project-grid_text">
-              <p>While I was working at the Baldwin Public Library the adult services wing was renovated and after nine months the library was looking for a way to help patrons explore this unfamiliar area of the library. To accomplish this I built a scavenger hunt to guide patrons through the library, share building history, and encourage interaction with each other.</p>
-              <p>Over 100 patrons used this scavenger hunt in which they could only advance by finding and entering the correct code. This project could be adapted to be an anytime introduction to the library (instead of being event-specific) and if you make this, let me know!</p>
+              <p>I built this project as a learning exercise so I could create and deploy a small full-stack application. It is a platform for collecting and tracking courses used to learn software development, similar to a slimmed-down Goodreads. I built it before starting at Quicken Loans, and because they mentioned using AWS I initially deployed it using AWS EC2 and RDS, but it now lives on Heroku. This was my second project using a Node backend, and my first project in which I wrote my own API endpoints.</p>
+              <p>I wrote the hide and show shelf animation from scratch, which at the time was an interesting challenge because the animation had to be flexible to handle shelves that were always an unknown height.</p>
             </div>
           </div>
         </div>
         <div class="headings">
           <div class="toc">
             <a href="#intro" class="active">Introduction</a>
-            <a href="#map">The Library Network Cooperative Map</a>
-            <a href="#scorekeeper">Battle of the Books Scorekeeper</a>
-            <a href="#hunt">Library Scavenger Hunt</a>
+            <a href="#tagpro">TagPro</a>
+            <a href="#sso">Quicken Loans SSO Admin Viewer</a>
+            <a href="#learning">Learning Platform</a>
           </div>
         </div>
       </div>
@@ -235,7 +240,7 @@
       </button>
       <nav class="menu">
         <div class="menu__item">
-          <a href="./" class="menu__item-link"><span>HOME</span></a>
+          <a href="/" class="menu__item-link"><span>HOME</span></a>
           <div class="marquee">
             <div class="marquee__inner" aria-hidden="true">
               <span>HOME /</span>
@@ -258,7 +263,7 @@
           </div>
         </div>
         <div class="menu__item">
-          <a href="./work.html" class="menu__item-link"><span>WORK</span></a>
+          <a href="/work" class="menu__item-link"><span>WORK</span></a>
           <div class="marquee">
             <div class="marquee__inner" aria-hidden="true">
               <span>WORK /</span>
@@ -281,7 +286,7 @@
           </div>
         </div>
         <div class="menu__item">
-          <a href="./library.html" class="menu__item-link"><span>LIBRARY</span></a>
+          <a href="/library" class="menu__item-link"><span>LIBRARY</span></a>
           <div class="marquee">
             <div class="marquee__inner" aria-hidden="true">
               <span>LIBRARY /</span>
@@ -300,7 +305,7 @@
           </div>
         </div>
         <div class="menu__item">
-          <a href="./fun.html" class="menu__item-link"><span>FUN</span></a>
+          <a href="/fun" class="menu__item-link"><span>FUN</span></a>
           <div class="marquee">
             <div class="marquee__inner" aria-hidden="true">
               <span>FUN /</span>
@@ -346,7 +351,7 @@
           </div>
         </div>
         <div class="menu__item">
-          <a href="./remenapp_portfolio_resume.pdf" target="_blank" rel="noopener noreferrer" class="menu__item-link"><span>RESUME</span></a>
+          <a href="/remenapp_portfolio_resume.pdf" target="_blank" rel="noopener noreferrer" class="menu__item-link"><span>RESUME</span></a>
           <div class="marquee">
             <div class="marquee__inner" aria-hidden="true">
               <span>RESUME /</span>

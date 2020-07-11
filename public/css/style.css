@@ -1,8 +1,8 @@
 @font-face {
   font-family: "DDCHardware";
-  src: url("./fonts/ddchardware-regular-webfont.woff2") format("woff2"),
-    url("./fonts/ddchardware-regular-webfont.woff") format("woff"),
-    url("./fonts/ddchardware-regular-webfont.ttf") format("truetype");
+  src: url("/fonts/ddchardware-regular-webfont.woff2") format("woff2"),
+    url("/fonts/ddchardware-regular-webfont.woff") format("woff"),
+    url("/fonts/ddchardware-regular-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -212,7 +212,7 @@ button:hover {
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
-	-webkit-text-stroke: 1.5px #000;
+	-webkit-text-stroke: 1.5px #252525;
 	-webkit-text-fill-color: transparent;
 	color: transparent;
   transition: opacity 0.4s;
@@ -534,7 +534,7 @@ select.btn {
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: #252525;
   position: absolute;
 }
 .hamburger-inner::before,
