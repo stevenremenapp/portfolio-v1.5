@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
@@ -33,12 +32,7 @@ app.get('/cluedo', (req, res) => {
   res.sendFile(path.join(__dirname+'/views/cluedo.html'));
 });
 
-app.get('/img/*', (req, res) => {
-  console.log("image hit");
-});
-
 app.get('*', (req, res) => {
-  console.log("404 hit");
   res.sendFile(path.join(__dirname+'/views/404.html'));
 });
 
