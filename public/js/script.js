@@ -38,7 +38,7 @@ function setup() {
   emojiSelect.option("🦄");
   emojiSelect.option("😜");
   emojiSelect.option("🤯");
-  emojiSelect.option("🤠");
+  emojiSelect.option("👅");
   emojiSelect.option("🕶");
   emojiSelect.option("👁");
   emojiSelect.option("🐒");
@@ -51,6 +51,7 @@ function emojiSelectEvent() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  background(color(255, 255, 255));
 }
 
 function mousePressed(event) {
@@ -122,7 +123,7 @@ function drawEmoji(x, y, px, py) {
 }
 
 function saveFile() {
-  save("wut.jpg");
+  save("your-awesome-emoji-drawing.jpg");
 }
 
 function clearScreen() {

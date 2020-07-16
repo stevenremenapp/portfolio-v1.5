@@ -117,6 +117,11 @@ canvas {
 }
 .project-grid_data_links a {
   padding: 10px;
+  border-bottom: none;
+}
+.project-grid_data_links a:hover,
+.project-grid_data_links a:focus {
+  animation: fontColors 10s infinite;
 }
 .project-grid_data_links.right a:last-of-type {
   padding-right: 0;
@@ -127,6 +132,7 @@ canvas {
 .project-grid_data_links svg {
   width: 25px;
   height: auto;
+  filter: url(#shadow);
 }
 .project-grid_text {
   grid-column: 1/-1;
@@ -142,6 +148,13 @@ figcaption {
 .caption-icon {
   font-weight: bold;
   margin-right: 10px;
+}
+figure a {
+  border-bottom: none;
+}
+figure a:hover,
+figure a:focus {
+  animation: none;
 }
 figure img {
   height: auto;
