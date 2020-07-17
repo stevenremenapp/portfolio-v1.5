@@ -40,13 +40,39 @@ To see my cats go to stevenremen.app/cats
   )  |  \  `.___________|/
   `--'   `--'
 -->
-  <header class="home-menu menu-container">
-    <button class="hamburger hamburger--3dxy" id="menu" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+  <button id="info-box-btn" class="btn info" title="Questions?" aria-label="Click to learn how to use the emoji drawing buttons">❓</button>
+  <div>
+    <button onclick="saveFile()" class="btn save" title="Save" aria-label="Click to save your emoji drawing">💾</button>
+    <button onclick="clearScreen()" class="btn delete" title="Clear Screen" aria-label="Clear screen">🗑️</button>
+    <select id="emoji-select" onchange="emojiSelectEvent()" class="btn select" title="Change emoji" aria-label="Change emoji">
+      <option value="😻">😻</option>
+      <option value="🌈">🌈</option>
+      <option value="💩">💩</option>
+      <option value="💓">💓</option>
+      <option value="🦄">🦄</option>
+      <option value="😜">😜</option>
+      <option value="🤯">🤯</option>
+      <option value="👅">👅</option>
+      <option value="🕶">🕶</option>
+      <option value="👁">👁</option>
+      <option value="🐒">🐒</option>
+    </select>
+  </div>
+  <header>
+    <div class="home-menu menu-container">
+      <button class="hamburger hamburger--3dxy" id="menu" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
   </header>
+  <div id="info-box" class="info-box" aria-hidden="true" tabindex="-1">
+    <p>Click/touch/drag to get weird!</p>
+    <p>💾: Download your creation</p>
+    <p>🗑️: Clear your canvas</p>
+    <p><span id="current-emoji">😻</span>: Change your emoji</p>
+  </div>
   <main class="container">
     <div class="large-screen">
       <div class="name">

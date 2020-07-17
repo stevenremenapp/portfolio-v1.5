@@ -11,42 +11,13 @@ function setup() {
   previousBackgroundColor = color(255, 255, 255);
   currentBackgroundColor = color(255, 255, 255);
   background(currentBackgroundColor);
-  // Creating the save button for the file
-  saveButton = createButton("💾");
-  saveButton.position(10, 10, "fixed");
-  saveButton.mousePressed(saveFile);
-  saveButton.class("btn");
-  saveButton.attribute("title", "Save");
-  saveButton.attribute("aria-label", "Save");
-  // Creating the clear button
-  clearButton = createButton("🗑️");
-  clearButton.position(75, 10, "fixed");
-  clearButton.mousePressed(clearScreen);
-  clearButton.class("btn");
-  clearButton.attribute("title", "Clear");
-  clearButton.attribute("aria-label", "Clear");
-  // Creating the emoji option button
-  emojiSelect = createSelect();
-  emojiSelect.position(140, 10, "fixed");
-  emojiSelect.class("btn");
-  emojiSelect.attribute("title", "Change Emoji");
-  emojiSelect.attribute("aria-label", "Change Emoji");
-  emojiSelect.option("😻");
-  emojiSelect.option("🌈");
-  emojiSelect.option("💩");
-  emojiSelect.option("💓");
-  emojiSelect.option("🦄");
-  emojiSelect.option("😜");
-  emojiSelect.option("🤯");
-  emojiSelect.option("👅");
-  emojiSelect.option("🕶");
-  emojiSelect.option("👁");
-  emojiSelect.option("🐒");
-  emojiSelect.changed(emojiSelectEvent);
 }
 
 function emojiSelectEvent() {
-  currentEmoji = emojiSelect.value();
+  const emojiSelect = document.getElementById("emoji-select");
+  const emojiDisplay = document.getElementById("current-emoji");
+  currentEmoji = emojiSelect.value;
+  emojiDisplay.innerText = emojiSelect.value;
 }
 
 function windowResized() {
@@ -138,6 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const openMenu = document.getElementById("open-menu");
   const closeMenuBtn = document.getElementById("close-menu-btn");
   const body = document.getElementsByTagName("body")[0];
+  const infoBoxBtn = document.getElementById("info-box-btn");
+  const infoBox = document.getElementById("info-box");
   menu.addEventListener("click", () => {
     body.style.overflow = "hidden";
     openMenu.classList.add("open");
@@ -153,5 +126,24 @@ document.addEventListener("DOMContentLoaded", () => {
     openMenu.setAttribute("tabindex", -1);
     body.style.overflow = "visible";
     menu.focus();
+  });
+  infoBoxBtn.addEventListener("click", (event) => {
+    if (event.target.innerText === "❓") {
+      infoBox.classList.add("open");
+      infoBox.classList.remove("closed");
+      infoBoxBtn.innerText = "❌";
+      infoBox.setAttribute("aria-hidden", false);
+      infoBox.setAttribute("tabindex", 1);
+      infoBoxBtn.setAttribute("title", "Close Help Menu");
+      infoBoxBtn.setAttribute("aria-label", "Close help menu");
+    } else {
+      infoBox.classList.remove("open");
+      infoBox.classList.add("closed");
+      infoBoxBtn.innerText = "❓";
+      infoBox.setAttribute("aria-hidden", true);
+      infoBox.setAttribute("tabindex", -1);
+      infoBoxBtn.setAttribute("title", "Questions?");
+      infoBoxBtn.setAttribute("aria-label", "Click to learn how to use the emoji drawing buttons");
+    }
   });
 });
