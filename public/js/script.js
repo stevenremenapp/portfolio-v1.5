@@ -3,8 +3,9 @@ let saveButton,
   buttonIsClicked,
   canvasIsClicked,
   previousBackgroundColor,
-  currentBackgroundColor;
-let currentEmoji = "😻";
+  currentBackgroundColor,
+  drawingEnabled,
+  currentEmoji
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -13,11 +14,49 @@ function setup() {
   background(currentBackgroundColor);
 }
 
+function setDrawingStatus() {
+  if (localStorage.getItem("drawingEnabled") === null || localStorage.getItem("drawingEnabled") === "true") {
+    drawingEnabled = true;
+    localStorage.setItem("drawingEnabled", true);
+  } else {
+    drawingEnabled = false;
+    localStorage.setItem("drawingEnabled", false);
+  }
+  const drawingInput = document.getElementById("draw");
+  drawingInput.checked = drawingEnabled;
+}
+
+function setCurrentEmoji() {
+  const emojiSelect = document.getElementById("emoji-select");
+  const emojiDisplay = document.getElementById("current-emoji");
+  if (localStorage.getItem("currentEmoji") === null) {
+    currentEmoji = "😻";
+    localStorage.setItem("currentEmoji", "😻");
+    emojiSelect.value = "😻";
+    emojiDisplay.innerText = "😻";
+  } else {
+    currentEmoji = localStorage.getItem("currentEmoji");
+    emojiSelect.value = localStorage.getItem("currentEmoji");
+    emojiDisplay.innerText = localStorage.getItem("currentEmoji");
+  }
+}
+
 function emojiSelectEvent() {
   const emojiSelect = document.getElementById("emoji-select");
   const emojiDisplay = document.getElementById("current-emoji");
   currentEmoji = emojiSelect.value;
+  localStorage.setItem("currentEmoji", emojiSelect.value);
   emojiDisplay.innerText = emojiSelect.value;
+}
+
+function handleDrawInput(input) {
+  if (input.checked) {
+    drawingEnabled = true;
+    localStorage.setItem("drawingEnabled", true);
+  } else {
+    drawingEnabled = false;
+    localStorage.setItem("drawingEnabled", false);
+  }
 }
 
 function windowResized() {
@@ -79,7 +118,7 @@ function draw() {
   // Call the drawEmoji() method and send it the
   // parameters for the current mouse position
   // and the previous mouse position
-  if (mouseIsPressed && canvasIsClicked) {
+  if (mouseIsPressed && canvasIsClicked && drawingEnabled) {
     drawEmoji(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
@@ -104,6 +143,8 @@ function clearScreen() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  setDrawingStatus();
+  setCurrentEmoji();
   // Handle menu
   const menu = document.getElementById("menu");
   const openMenu = document.getElementById("open-menu");

@@ -40,25 +40,26 @@ To see my cats go to stevenremen.app/cats
   )  |  \  `.___________|/
   `--'   `--'
 -->
-  <button id="info-box-btn" class="btn info" title="Questions?" aria-label="Click to learn how to use the emoji drawing buttons">❓</button>
-  <div>
-    <button onclick="saveFile()" class="btn save" title="Save" aria-label="Click to save your emoji drawing">💾</button>
-    <button onclick="clearScreen()" class="btn delete" title="Clear Screen" aria-label="Clear screen">🗑️</button>
-    <select id="emoji-select" onchange="emojiSelectEvent()" class="btn select" title="Change emoji" aria-label="Change emoji">
-      <option value="😻">😻</option>
-      <option value="🌈">🌈</option>
-      <option value="💩">💩</option>
-      <option value="💓">💓</option>
-      <option value="🦄">🦄</option>
-      <option value="😜">😜</option>
-      <option value="🤯">🤯</option>
-      <option value="👅">👅</option>
-      <option value="🕶">🕶</option>
-      <option value="👁">👁</option>
-      <option value="🐒">🐒</option>
-    </select>
-  </div>
   <header>
+    <button id="info-box-btn" class="btn info" title="Questions?" aria-label="Click to learn how to use the emoji drawing buttons">❓</button>
+    <div>
+      <button onclick="saveFile()" class="btn save" title="Save" aria-label="Click to save your emoji drawing">💾</button>
+      <button onclick="clearScreen()" class="btn delete" title="Clear Screen" aria-label="Clear screen">🗑️</button>
+      <select id="emoji-select" onchange="emojiSelectEvent()" class="btn select" title="Change emoji" aria-label="Change emoji">
+        <option value="😻">😻</option>
+        <option value="🌈">🌈</option>
+        <option value="💩">💩</option>
+        <option value="💓">💓</option>
+        <option value="🦄">🦄</option>
+        <option value="😜">😜</option>
+        <option value="🤯">🤯</option>
+        <option value="👅">👅</option>
+        <option value="💀">💀</option>
+        <option value="🕶">🕶</option>
+        <option value="👁">👁</option>
+        <option value="🐒">🐒</option>
+      </select>
+    </div>
     <div class="home-menu menu-container">
       <button class="hamburger hamburger--3dxy" id="menu" type="button">
         <span class="hamburger-box">
@@ -72,6 +73,8 @@ To see my cats go to stevenremen.app/cats
     <p>💾: Download your creation</p>
     <p>🗑️: Clear your canvas</p>
     <p><span id="current-emoji">😻</span>: Change your emoji</p>
+    <input onclick="handleDrawInput(this)" type="checkbox" id="draw" name="draw">
+    <label for="draw">Drawing enabled</label>
   </div>
   <main class="container">
     <div class="large-screen">
